@@ -120,6 +120,20 @@ namespace GymBookingSystem.Controllers
             }
         }
 
+        [HttpGet("GetTrainingClassesAtGym")]
+        public IActionResult GetTrainingClassesAtGym(int GymId)
+        {
+            List<TrainingClass> t = _UserService.GetTrainingClassesAtGym(GymId);
+            if (t == null)
+            {
+                return BadRequest();
+            }
+            else
+            {
+                return Ok(t);
+            }
+        }
+
 
 
 
