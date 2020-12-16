@@ -156,6 +156,15 @@ namespace GymBookingSystem.Services
 
         }
 
+        public User DeleteUser(int UserId)
+        {
+            User U = _context.Users.Where(x => x.UserId == UserId).FirstOrDefault();
+            _context.Users.Remove(U);
+            _context.SaveChanges();
+
+            return U;
+        }
+
         //public string ChangeClass(int trainingclassid, string changegymid, string changetrainerid, string changemaxpeople, string changedescription, string changedatetime_start, string changedatetime_end)
         //{
         //    TrainingClass tc = _context.TrainingClasses.Where(x => x.TrainingClassId == trainingclassid && x.GymId == changegymid == && x.TrainerId == changetrainerid == && x.Maxpeople

@@ -134,6 +134,19 @@ namespace GymBookingSystem.Controllers
             }
         }
 
+        [HttpGet("DeleteUser")]
+        public IActionResult DeleteUser(int UserId)
+        {
+            User U = _UserService.DeleteUser(UserId);
+            if (U == null)
+            {
+                return BadRequest();
+            }
+            else
+            {
+                return Ok(U);
+            }
+        }
 
 
 
