@@ -120,29 +120,29 @@ namespace GymBookingSystem.Controllers
             }
         }
 
-<<<<<<< HEAD
         [HttpGet("GetGym")]
         public IActionResult GetGym()
         {
             List<Gym> g = _UserService.GetGyms();
             if (g == null)
-=======
+            {
+                return BadRequest();
+            }
+            else return Ok(g);
+        }
+
         [HttpGet("GetTrainingClassesAtGym")]
         public IActionResult GetTrainingClassesAtGym(int GymId)
         {
             List<TrainingClass> t = _UserService.GetTrainingClassesAtGym(GymId);
             if (t == null)
->>>>>>> cb68cbcd21e04e100002db6907de0c043cba5ee3
             {
                 return BadRequest();
             }
+
             else
             {
-<<<<<<< HEAD
-                return Ok(g);
-=======
                 return Ok(t);
->>>>>>> cb68cbcd21e04e100002db6907de0c043cba5ee3
             }
         }
 
@@ -159,39 +159,5 @@ namespace GymBookingSystem.Controllers
                 return Ok(U);
             }
         }
-
-
-
-        //// GET: api/User
-        //[HttpGet]
-        //public IEnumerable<string> Get()
-        //{
-        //    return new string[] { "value1", "value2" };
-        //}
-
-        //// GET: api/User/5
-        //[HttpGet("{id}", Name = "Get")]
-        //public string Get(int id)
-        //{
-        //    return "value";
-        //}
-
-        //// POST: api/User
-        //[HttpPost]
-        //public void Post([FromBody] string value)
-        //{
-        //}
-
-        //// PUT: api/User/5
-        //[HttpPut("{id}")]
-        //public void Put(int id, [FromBody] string value)
-        //{
-        //}
-
-        //// DELETE: api/ApiWithActions/5
-        //[HttpDelete("{id}")]
-        //public void Delete(int id)
-        //{
-        //}
     }
 }
