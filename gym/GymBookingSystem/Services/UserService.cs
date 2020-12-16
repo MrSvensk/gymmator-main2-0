@@ -172,6 +172,22 @@ namespace GymBookingSystem.Services
 
         }
 
+        public List<TrainingClass> GetTrainingClassesAtGym(int GymId)
+        {
+            List<TrainingClass> t = _context.TrainingClasses.Where(x => x.GymId == GymId).ToList();
+
+            if (t != null)
+            {
+                return t;
+            }
+
+            else
+            {
+                return null;
+            }
+
+        }
+
         //public string ChangeClass(int trainingclassid, string changegymid, string changetrainerid, string changemaxpeople, string changedescription, string changedatetime_start, string changedatetime_end)
         //{
         //    TrainingClass tc = _context.TrainingClasses.Where(x => x.TrainingClassId == trainingclassid && x.GymId == changegymid == && x.TrainerId == changetrainerid == && x.Maxpeople
@@ -218,5 +234,5 @@ namespace GymBookingSystem.Services
 
             return TC;*/
     }
-    }
+}
 

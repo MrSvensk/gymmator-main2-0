@@ -120,17 +120,29 @@ namespace GymBookingSystem.Controllers
             }
         }
 
+<<<<<<< HEAD
         [HttpGet("GetGym")]
         public IActionResult GetGym()
         {
             List<Gym> g = _UserService.GetGyms();
             if (g == null)
+=======
+        [HttpGet("GetTrainingClassesAtGym")]
+        public IActionResult GetTrainingClassesAtGym(int GymId)
+        {
+            List<TrainingClass> t = _UserService.GetTrainingClassesAtGym(GymId);
+            if (t == null)
+>>>>>>> cb68cbcd21e04e100002db6907de0c043cba5ee3
             {
                 return BadRequest();
             }
             else
             {
+<<<<<<< HEAD
                 return Ok(g);
+=======
+                return Ok(t);
+>>>>>>> cb68cbcd21e04e100002db6907de0c043cba5ee3
             }
         }
 
