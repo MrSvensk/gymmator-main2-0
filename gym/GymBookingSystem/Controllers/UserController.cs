@@ -92,15 +92,43 @@ namespace GymBookingSystem.Controllers
             }
         }
 
+        [HttpGet("GetTrainingClass")]
+        public IActionResult GetTrainingClass(int Id)
+        {
+            TrainingClass t = _UserService.GetTrainingClass(Id);
+            if (t == null)
+            {
+                return BadRequest();
+            }
+            else
+            {
+                return Ok(t);
+            }
+        }
+
+        [HttpGet("GetTrainingClasses")]
+        public IActionResult GetTrainingClasses()
+        {
+            List<TrainingClass> t = _UserService.GetTrainingClasses();
+            if (t == null)
+            {
+                return BadRequest();
+            }
+            else
+            {
+                return Ok(t);
+            }
+        }
 
 
 
-            //// GET: api/User
-            //[HttpGet]
-            //public IEnumerable<string> Get()
-            //{
-            //    return new string[] { "value1", "value2" };
-            //}
+
+        //// GET: api/User
+        //[HttpGet]
+        //public IEnumerable<string> Get()
+        //{
+        //    return new string[] { "value1", "value2" };
+        //}
 
         //// GET: api/User/5
         //[HttpGet("{id}", Name = "Get")]
@@ -127,4 +155,4 @@ namespace GymBookingSystem.Controllers
         //{
         //}
     }
-    }
+}

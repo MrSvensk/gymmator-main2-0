@@ -15,5 +15,9 @@ namespace GymBookingSystem.Services
         Gym CreateGym(GymDto dto);
 
         TrainingClass CreateTrainingClass(TrainingClassDto dto);
+        TrainingClass GetTrainingClass(int Id);
+
+        List<TrainingClass> GetTrainingClasses();
+
     }
 }
