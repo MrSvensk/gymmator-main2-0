@@ -94,6 +94,7 @@ namespace GymBookingSystem.Services
             {
                     //TrainingClassId = dto.TrainingClassId,
                     GymId = dto.GymId,
+                    Name = dto.Name,
                     TrainerId = dto.TrainerId,
                     MaxPeople = dto.MaxPeople,
                     Description = dto.Description,

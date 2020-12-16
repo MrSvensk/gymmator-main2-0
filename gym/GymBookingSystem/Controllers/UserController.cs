@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using GymBookingSystem.Models;
+using GymBookingSystem.Models.DTO;
 using GymBookingSystem.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -77,6 +78,20 @@ namespace GymBookingSystem.Controllers
 
         }
 
+        [HttpPost("CreateTrainingClass")]
+        public IActionResult CreateTrainingClass(TrainingClassDto dto)
+        {
+            TrainingClass t = _UserService.CreateTrainingClass(dto);
+            if (t == null)
+            {
+                return BadRequest();
+            }
+            else
+            {
+                return Created("yay", t);
+            }
+        }
+
 
 
 
@@ -87,29 +102,29 @@ namespace GymBookingSystem.Controllers
             //    return new string[] { "value1", "value2" };
             //}
 
-            //// GET: api/User/5
-            //[HttpGet("{id}", Name = "Get")]
-            //public string Get(int id)
-            //{
-            //    return "value";
-            //}
+        //// GET: api/User/5
+        //[HttpGet("{id}", Name = "Get")]
+        //public string Get(int id)
+        //{
+        //    return "value";
+        //}
 
-            //// POST: api/User
-            //[HttpPost]
-            //public void Post([FromBody] string value)
-            //{
-            //}
+        //// POST: api/User
+        //[HttpPost]
+        //public void Post([FromBody] string value)
+        //{
+        //}
 
-            //// PUT: api/User/5
-            //[HttpPut("{id}")]
-            //public void Put(int id, [FromBody] string value)
-            //{
-            //}
+        //// PUT: api/User/5
+        //[HttpPut("{id}")]
+        //public void Put(int id, [FromBody] string value)
+        //{
+        //}
 
-            //// DELETE: api/ApiWithActions/5
-            //[HttpDelete("{id}")]
-            //public void Delete(int id)
-            //{
-            //}
-        }
+        //// DELETE: api/ApiWithActions/5
+        //[HttpDelete("{id}")]
+        //public void Delete(int id)
+        //{
+        //}
+    }
     }

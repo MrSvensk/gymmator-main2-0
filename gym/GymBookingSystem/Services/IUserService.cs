@@ -1,4 +1,5 @@
 ﻿using GymBookingSystem.Models;
+using GymBookingSystem.Models.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,5 +13,7 @@ namespace GymBookingSystem.Services
         int Login(string username, string password);
         string ChangePassword(int userId, string newPassword, string oldPassword);
         Gym CreateGym(GymDto dto);
+
+        TrainingClass CreateTrainingClass(TrainingClassDto dto);
     }
 }
