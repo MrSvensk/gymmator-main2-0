@@ -75,6 +75,7 @@ namespace GymBookingSystem.Services
                 StreetAdress = dto.StreetAdress,
                 PostalCode = dto.PostalCode,
                 City = dto.City,
+                OperationalHours = dto.OperationalHours,
                 MaxPeople = dto.MaxPeople,
                 Email = dto.Email,
                 PhoneNumber = dto.PhoneNumber
@@ -131,6 +132,37 @@ namespace GymBookingSystem.Services
             if (t != null)
             {
                 return t;
+            }
+
+            else
+            {
+                return null;
+            }
+
+        }
+
+        public Gym GetGym(int Id)
+        {
+            var g = _context.Gyms.Where(x => x.GymId == Id).FirstOrDefault();
+
+            if (g != null)
+            {
+                return g;
+            }
+
+            else
+            {
+                return null;
+            }
+        }
+
+        public List<Gym> GetGyms()
+        {
+            List<Gym> g = _context.Gyms.ToList();
+
+            if (g != null)
+            {
+                return g;
             }
 
             else

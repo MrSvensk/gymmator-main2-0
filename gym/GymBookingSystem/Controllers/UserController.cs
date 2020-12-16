@@ -120,6 +120,20 @@ namespace GymBookingSystem.Controllers
             }
         }
 
+        [HttpGet("GetGym")]
+        public IActionResult GetGym()
+        {
+            List<Gym> g = _UserService.GetGyms();
+            if (g == null)
+            {
+                return BadRequest();
+            }
+            else
+            {
+                return Ok(g);
+            }
+        }
+
 
 
 

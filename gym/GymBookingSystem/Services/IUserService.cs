@@ -19,5 +19,8 @@ namespace GymBookingSystem.Services
 
         List<TrainingClass> GetTrainingClasses();
 
+        Gym GetGym(int Id);
+        List<Gym> GetGyms();
+
     }
 }
