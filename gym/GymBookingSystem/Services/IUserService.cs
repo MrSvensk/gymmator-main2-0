@@ -20,5 +20,8 @@ namespace GymBookingSystem.Services
         List<TrainingClass> GetTrainingClassesAtGym(int GymId);
         User DeleteUser(int UserId);
 
+        Gym GetGym(int Id);
+        List<Gym> GetGyms();
+
     }
 }
