@@ -206,8 +206,24 @@ namespace GymBookingSystem.Services
         }
 
         public List<Booking> GetUsersBookings(int userId)
+        public Trainer CreateTrainer(TrainerDto dto)
         {
             List<Booking> b = _context.Bookings.Where(x => x.UserId == userId).ToList();
+            Trainer t = new Trainer()
+            {
+
+                FirstName = dto.FirstName,
+                LastName = dto.LastName,
+                Email = dto.Email
+            };
+            _context.Trainers.Add(t);
+            _context.SaveChanges();
+            return t;
+
+        }
+
+
+
 
             if (b != null)
             {
