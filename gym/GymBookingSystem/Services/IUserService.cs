@@ -10,7 +10,7 @@ namespace GymBookingSystem.Services
     public interface IUserService
     {
         User CreateUser(UserDto dto);
-        int Login(string username, string password);
+        User Login(string username, string password);
         string ChangePassword(int userId, string newPassword, string oldPassword);
         Gym CreateGym(GymDto dto);
 
@@ -18,7 +18,7 @@ namespace GymBookingSystem.Services
         TrainingClass GetTrainingClass(int Id);
         List<TrainingClass> GetTrainingClasses();
         List<TrainingClass> GetTrainingClassesAtGym(int GymId);
-        User DeleteUser(int UserId);
+        //User DeleteUser(int UserId);
 
         Gym GetGym(int Id);
         List<Gym> GetGyms();

@@ -40,14 +40,14 @@ namespace GymBookingSystem.Services
         }
 
 
-        public int Login(string username, string password)
+        public User Login(string username, string password)
         {         
            LoginCredentials lc = _context.LoginCredentials.Where(x => x.Username == username && x.Password == password).FirstOrDefault();
            
             if (lc != null)
-                return lc.UserId;
+                return _context.Users.Where(x => x.UserId == lc.UserId).FirstOrDefault();
            else
-                return 0;
+                return null;
         }
 
         public string ChangePassword(int userId, string newPassword, string oldPassword)
@@ -188,14 +188,14 @@ namespace GymBookingSystem.Services
 
         }
 
-        public User DeleteUser(int UserId)
-        {
-            User U = _context.Users.Where(x => x.UserId == UserId).FirstOrDefault();
-            _context.Users.Remove(U);
-            _context.SaveChanges();
+        //public User DeleteUser(int UserId)
+        //{
+        //    User U = _context.Users.Where(x => x.UserId == UserId).FirstOrDefault();
+        //    _context.Users.Remove(U);
+        //    _context.SaveChanges();
 
-            return U;
-        }
+        //    return U;
+        //}
 
         //public string ChangeClass(int trainingclassid, string changegymid, string changetrainerid, string changemaxpeople, string changedescription, string changedatetime_start, string changedatetime_end)
         //{

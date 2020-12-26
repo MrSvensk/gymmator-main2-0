@@ -51,14 +51,14 @@ namespace GymBookingSystem.Controllers
         [HttpGet("login")]
         public IActionResult Login(string username, string password) 
         {
-            int userID = _UserService.Login(username, password);
-            if(userID == 0)
+            User user = _UserService.Login(username, password);
+            if(user == null)
             {
                 return BadRequest();
             }
             else
             {
-                return Ok(userID);
+                return Ok(user);
             }
 
         }
@@ -146,18 +146,18 @@ namespace GymBookingSystem.Controllers
             }
         }
 
-        [HttpGet("DeleteUser")]
-        public IActionResult DeleteUser(int UserId)
-        {
-            User U = _UserService.DeleteUser(UserId);
-            if (U == null)
-            {
-                return BadRequest();
-            }
-            else
-            {
-                return Ok(U);
-            }
-        }
+        //[HttpGet("DeleteUser")]
+        //public IActionResult DeleteUser(int UserId)
+        //{
+        //    User U = _UserService.DeleteUser(UserId);
+        //    if (U == null)
+        //    {
+        //        return BadRequest();
+        //    }
+        //    else
+        //    {
+        //        return Ok(U);
+        //    }
+        //}
     }
 }
