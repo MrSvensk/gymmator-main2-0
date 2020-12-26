@@ -146,6 +146,20 @@ namespace GymBookingSystem.Controllers
             }
         }
 
+        [HttpPost("CreateBooking")]
+        public IActionResult CreateBooking(BookingDto dto)
+        {
+            Booking b = _UserService.CreateBooking(dto);
+            if (b == null)
+            {
+                return BadRequest();
+            }
+            else
+            {
+                return Created("yay", b);
+            }
+        }
+
         //[HttpGet("DeleteUser")]
         //public IActionResult DeleteUser(int UserId)
         //{

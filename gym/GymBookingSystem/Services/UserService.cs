@@ -188,6 +188,23 @@ namespace GymBookingSystem.Services
 
         }
 
+        public Booking CreateBooking(BookingDto dto)
+        {
+            Booking b = new Booking()
+            {
+                GymId = dto.GymId,
+                UserId = dto.UserId,
+                TrainerId = dto.TrainerId,
+                Timestamp = dto.Timestamp,
+                Date = dto.Date,
+                TrainingClassId = dto.TrainingClassId
+            };
+
+            _context.Bookings.Add(b);
+            _context.SaveChanges();
+            return b;
+        }
+
         //public User DeleteUser(int UserId)
         //{
         //    User U = _context.Users.Where(x => x.UserId == UserId).FirstOrDefault();
