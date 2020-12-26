@@ -205,6 +205,23 @@ namespace GymBookingSystem.Services
             return b;
         }
 
+        public Trainer CreateTrainer(TrainerDto dto)
+        {
+            Trainer t = new Trainer()
+            {
+
+                FirstName = dto.FirstName,
+                LastName = dto.LastName,
+                Email = dto.Email
+            };
+            _context.Trainers.Add(t);
+            _context.SaveChanges();
+            return t;
+
+        }
+
+
+
         //public User DeleteUser(int UserId)
         //{
         //    User U = _context.Users.Where(x => x.UserId == UserId).FirstOrDefault();

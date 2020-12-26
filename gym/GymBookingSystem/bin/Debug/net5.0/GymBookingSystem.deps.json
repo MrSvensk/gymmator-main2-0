@@ -29,6 +29,7 @@
           "Microsoft.EntityFrameworkCore.Design": "5.0.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.1",
           "Microsoft.EntityFrameworkCore.Sqlite": "5.0.1",
+          "Microsoft.EntityFrameworkCore.Tools": "5.0.1",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "5.0.1",
           "Swashbuckle.AspNetCore.Swagger": "5.6.3",
           "Swashbuckle.AspNetCore.SwaggerGen": "5.6.3",
@@ -821,6 +822,11 @@
         },
         "compile": {
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.SqlServer.dll": {}
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Tools/5.0.1": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Design": "5.0.1"
         }
       },
       "Microsoft.Extensions.Caching.Abstractions/5.0.0": {
@@ -3884,6 +3890,13 @@
       "sha512": "sha512-FHo52VV2pvAJZBfNIYmre6MLe4LHTUZxMdmNJIOahcwdVpl2UG5YPEnI0qwKauan1PdJyPKmBsbLQvIEfvYLOQ==",
       "path": "microsoft.entityframeworkcore.sqlserver/5.0.1",
       "hashPath": "microsoft.entityframeworkcore.sqlserver.5.0.1.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Tools/5.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-aWC8uiAHkuZzOOxQwqzUyqRMGCCcqjthIUsJVn9I601UkVhxmHwvB/oARO1xb0GBaCfJuCJglo2wkehBjegwRQ==",
+      "path": "microsoft.entityframeworkcore.tools/5.0.1",
+      "hashPath": "microsoft.entityframeworkcore.tools.5.0.1.nupkg.sha512"
     },
     "Microsoft.Extensions.Caching.Abstractions/5.0.0": {
       "type": "package",

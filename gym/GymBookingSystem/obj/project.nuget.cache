@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "uopXAkcsdNG1UG/gNe32bXMVZSqzaBos4JUekm3sO4De2PV8zgoz5fEmGBROifmX1EtjoZkdB6ngSRx3rOdmlQ==",
+  "dgSpecHash": "JsidU/YGaIL1oHwvno0FfqK+uzW6M0eXPNZcN+QuX4d2O9Jq5O345WUKU8VmB62sTySyvTqCg9EgFPbsfq+qbw==",
   "success": true,
   "projectFilePath": "C:\\Users\\heavy\\OneDrive\\Skrivbord\\Ny mapp (3)\\gymmator-main\\gym\\GymBookingSystem\\GymBookingSystem.csproj",
   "expectedPackageFiles": [
@@ -29,6 +29,7 @@
     "C:\\Users\\heavy\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite\\5.0.1\\microsoft.entityframeworkcore.sqlite.5.0.1.nupkg.sha512",
     "C:\\Users\\heavy\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite.core\\5.0.1\\microsoft.entityframeworkcore.sqlite.core.5.0.1.nupkg.sha512",
     "C:\\Users\\heavy\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\5.0.1\\microsoft.entityframeworkcore.sqlserver.5.0.1.nupkg.sha512",
+    "C:\\Users\\heavy\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\5.0.1\\microsoft.entityframeworkcore.tools.5.0.1.nupkg.sha512",
     "C:\\Users\\heavy\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\heavy\\.nuget\\packages\\microsoft.extensions.caching.memory\\5.0.0\\microsoft.extensions.caching.memory.5.0.0.nupkg.sha512",
     "C:\\Users\\heavy\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",

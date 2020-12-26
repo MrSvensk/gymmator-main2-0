@@ -160,6 +160,20 @@ namespace GymBookingSystem.Controllers
             }
         }
 
+        [HttpPost("CreateTrainer")]
+        public IActionResult CreateTrainer(TrainerDto dto)
+        {
+            Trainer t = _UserService.CreateTrainer(dto);
+            if (t == null)
+            {
+                return BadRequest();
+            }
+            else
+            {
+                return Created("Tjoho", t);
+            }
+        }
+
         //[HttpGet("DeleteUser")]
         //public IActionResult DeleteUser(int UserId)
         //{
