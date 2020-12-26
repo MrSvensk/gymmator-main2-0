@@ -160,6 +160,21 @@ namespace GymBookingSystem.Controllers
             }
         }
 
+        [HttpGet("GetUsersBookings")]
+        public IActionResult GetUsersBookings(int userId)
+        {
+            List<Booking> b = _UserService.GetUsersBookings(userId);
+            if (b == null)
+            {
+                return BadRequest();
+            }
+
+            else
+            {
+                return Ok(b);
+            }
+        }
+
         //[HttpGet("DeleteUser")]
         //public IActionResult DeleteUser(int UserId)
         //{

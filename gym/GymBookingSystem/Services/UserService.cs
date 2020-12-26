@@ -205,14 +205,36 @@ namespace GymBookingSystem.Services
             return b;
         }
 
-        //public User DeleteUser(int UserId)
-        //{
-        //    User U = _context.Users.Where(x => x.UserId == UserId).FirstOrDefault();
-        //    _context.Users.Remove(U);
-        //    _context.SaveChanges();
+        public List<Booking> GetUsersBookings(int userId)
+        {
+            List<Booking> b = _context.Bookings.Where(x => x.UserId == userId).ToList();
 
-        //    return U;
-        //}
+            if (b != null)
+            {
+                return b;
+            }
+
+            else
+            {
+                return null;
+            }
+
+        }
+
+
+        public User DeleteUser(int UserId)
+        {
+            List<Booking> b = _context.Bookings.Where(x => x.UserId == UserId).ToList();
+            User U = _context.Users.Where(x => x.UserId == UserId).FirstOrDefault();
+            LoginCredentials lc = _context.LoginCredentials.Where(x => x.UserId == UserId).FirstOrDefault();
+
+            _context.LoginCredentials.Remove(lc);
+            b.ForEach(x => _context.Bookings.Remove(x));
+            _context.Users.Remove(U);
+            _context.SaveChanges();
+
+            return U;
+        }
 
         //public string ChangeClass(int trainingclassid, string changegymid, string changetrainerid, string changemaxpeople, string changedescription, string changedatetime_start, string changedatetime_end)
         //{
