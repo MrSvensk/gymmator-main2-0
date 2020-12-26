@@ -162,22 +162,26 @@ namespace GymBookingSystem.Controllers
 
         [HttpGet("GetUsersBookings")]
         public IActionResult GetUsersBookings(int userId)
-        [HttpPost("CreateTrainer")]
-        public IActionResult CreateTrainer(TrainerDto dto)
         {
             List<Booking> b = _UserService.GetUsersBookings(userId);
             if (b == null)
-            Trainer t = _UserService.CreateTrainer(dto);
-            if (t == null)
             {
                 return BadRequest();
             }
-
             else
             {
                 return Ok(b);
             }
         }
+
+        [HttpPost("CreateTrainer")]
+        public IActionResult CreateTrainer(TrainerDto dto)
+        {
+            Trainer t = _UserService.CreateTrainer(dto);
+            if (t == null)
+            {
+                return BadRequest();
+            }
             else
             {
                 return Created("Tjoho", t);
@@ -185,18 +189,18 @@ namespace GymBookingSystem.Controllers
         }
 
 
-        //[HttpGet("DeleteUser")]
-        //public IActionResult DeleteUser(int UserId)
-        //{
-        //    User U = _UserService.DeleteUser(UserId);
-        //    if (U == null)
-        //    {
-        //        return BadRequest();
-        //    }
-        //    else
-        //    {
-        //        return Ok(U);
-        //    }
-        //}
+        [HttpDelete("DeleteUser")]
+        public IActionResult DeleteUser(int UserId)
+        {
+            User U = _UserService.DeleteUser(UserId);
+            if (U == null)
+            {
+                return BadRequest();
+            }
+            else
+            {
+                return Ok(U);
+            }
+        }
     }
 }

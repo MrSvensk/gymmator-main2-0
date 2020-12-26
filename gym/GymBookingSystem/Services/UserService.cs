@@ -206,9 +206,21 @@ namespace GymBookingSystem.Services
         }
 
         public List<Booking> GetUsersBookings(int userId)
-        public Trainer CreateTrainer(TrainerDto dto)
         {
             List<Booking> b = _context.Bookings.Where(x => x.UserId == userId).ToList();
+            if (b != null)
+            {
+                return b;
+            }
+
+            else
+            {
+                return null;
+            }
+        }
+
+        public Trainer CreateTrainer(TrainerDto dto)
+        {
             Trainer t = new Trainer()
             {
 
@@ -221,22 +233,6 @@ namespace GymBookingSystem.Services
             return t;
 
         }
-
-
-
-
-            if (b != null)
-            {
-                return b;
-            }
-
-            else
-            {
-                return null;
-            }
-
-        }
-
 
         public User DeleteUser(int UserId)
         {
